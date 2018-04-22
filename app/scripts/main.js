@@ -4,4 +4,4 @@
 import {sum, product} from './inits/sum';
 
 /* Initial setup */
-console.log(sum(3, 5), product(3, 5));
+console.log(sum(3, 5), product(3, 6));

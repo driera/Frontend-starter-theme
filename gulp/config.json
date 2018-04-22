@@ -1,0 +1,85 @@
+{
+    "tasks": {
+        "server": {
+            "src": "web/",
+            "dest": "",
+            "entry": "",
+            "pattern": "",
+            "categories": [],
+            "dependencies": []
+        },
+        "html": {
+            "src": "app/views/",
+            "dest": "web/",
+            "entry": "index.html",
+            "pattern": "**/*.html",
+            "categories": ["default", "watch"],
+            "dependencies": []
+        },
+        "browserify": {
+            "src": "app/scripts/",
+            "dest": "web/js/",
+            "entry": "main.js",
+            "pattern": "**/*.js",
+            "categories": ["watch", "default"],
+            "dependencies": []
+        },
+        "css": {
+            "src": "app/styles/",
+            "dest": "web/css/",
+            "entry": "main.css",
+            "pattern": "**/*.css",
+            "categories": ["watch", "default"],
+            "dependencies": []
+        },
+        "svg": {
+            "src": "app/svg/optimized/",
+            "dest": "web/svg/",
+            "entry": "",
+            "pattern": "**/*.svg",
+            "categories": ["default"],
+            "dependencies": ["svgo"]
+        },
+        "svgo": {
+            "src": "app/svg/initial/",
+            "dest": "app/svg/optimized/",
+            "entry": "",
+            "pattern": "**/*.svg",
+            "categories": [],
+            "dependencies": []
+        }
+    },
+    "plugins": {
+        "autoprefixer": {
+            "browsers": ["last 2 versions"],
+            "flexbox": "no-2009",
+            "grid": false
+        },
+        "babel": {
+            "presets": ["env"]
+        },
+        "nano": {
+            "discardComments": {
+                "removeAll": true
+            },
+            "safe": true
+        },
+        "svgo": {
+            "plugins": [{
+                "removeViewBox": false,
+                "removeTitle": false
+            }]
+        },
+        "svgSymbols": {
+            "fontSize": 100,
+            "title": "%f icon",
+            "class": ".icon-%f",
+            "id": "icon-%f",
+            "templates": ["default-svg", "default-css", "default-demo"]
+        },
+        "browserSync": {
+            "open": false,
+            "port": 3000
+        }
+    }
+}
