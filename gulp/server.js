@@ -1,12 +1,11 @@
-var browserSync = require('browser-sync').create();
-var config = require('./config.json');
-
-module.exports = function() {
-    browserSync.init({
-        server: {
-            baseDir: config.tasks.server.src
-        },
-        open: config.plugins.browserSync.open,
-        port: config.plugins.browserSync.port || 3000
+module.exports = function(gulp, config, browserSync) {
+    gulp.task('server', () => {
+        browserSync.init({
+            open: config.plugins.browserSync.open ? 'local' : false,
+            port: config.plugins.browserSync.port || 3000,
+            server: {
+                baseDir: config.tasks.server.src,
+            }
+        });
     });
 }

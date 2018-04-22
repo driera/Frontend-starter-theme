@@ -1,19 +1,13 @@
 {
     "tasks": {
         "server": {
-            "src": "web/",
-            "dest": "",
-            "entry": "",
-            "pattern": "",
-            "categories": [],
-            "dependencies": []
+            "src": "web/"
         },
         "html": {
             "src": "app/views/",
             "dest": "web/",
             "entry": "index.html",
             "pattern": "**/*.html",
-            "categories": ["default", "watch"],
             "dependencies": []
         },
         "browserify": {
@@ -21,7 +15,6 @@
             "dest": "web/js/",
             "entry": "main.js",
             "pattern": "**/*.js",
-            "categories": ["watch", "default"],
             "dependencies": []
         },
         "css": {
@@ -29,7 +22,6 @@
             "dest": "web/css/",
             "entry": "main.css",
             "pattern": "**/*.css",
-            "categories": ["watch", "default"],
             "dependencies": []
         },
         "svg": {
@@ -37,7 +29,6 @@
             "dest": "web/svg/",
             "entry": "",
             "pattern": "**/*.svg",
-            "categories": ["default"],
             "dependencies": ["svgo"]
         },
         "svgo": {
@@ -45,7 +36,6 @@
             "dest": "app/svg/optimized/",
             "entry": "",
             "pattern": "**/*.svg",
-            "categories": [],
             "dependencies": []
         }
     },

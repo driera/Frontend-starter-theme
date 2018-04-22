@@ -19,6 +19,6 @@ module.exports = { sum: sum, product: product };
 var _sum = require('./inits/sum');
 
 /* Initial setup */
-console.log((0, _sum.sum)(3, 5), (0, _sum.product)(3, 6));
+console.log((0, _sum.sum)(3, 5), (0, _sum.product)(3, 5));
 
 },{"./inits/sum":1}]},{},[2]);
